@@ -22,7 +22,7 @@ for index, todo in enumerate(todos):
         todos.pop(index)
         functions.write_todos(todos)
         del st.session_state[todo]
-        st.experimental_rerun()
+        st.rerun()
 
 st.text_input(label='Escribe tu pendiente', label_visibility="hidden",
               placeholder='Escribe una tarea...', on_change=add_todo,
