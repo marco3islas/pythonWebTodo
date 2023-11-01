@@ -15,8 +15,13 @@ st.subheader("Bienvenido a la App de Tareas")
 st.write("Esta app esta hecha para ayudar a tener una mejor")
 st.write("organizacion con tus actividades, tareas y/o pendientes")
 
-for todo in todos:
-    st.checkbox(todo)
+for index, todo in enumerate(todos):
+    checkbox = st.checkbox(todo, key=todo)
+    if checkbox:
+        todos.pop(index)
+        functions.write_todos(todos)
+        del st.session_state[todo]
+        st.experimental_rerun()
 
 st.text_input(label='Escribe tu pendiente', label_visibility="hidden",
               placeholder='Escribe una tarea...', on_change=add_todo,
