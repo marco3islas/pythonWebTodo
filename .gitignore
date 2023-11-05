@@ -1,0 +1,9 @@
+Pipfile
+bonus/
+bonus/camera.py
+pages/about.py
+test.py
+__pycache__/functions.cpython-310.pyc
+styles.css
+
+

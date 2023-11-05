@@ -1,8 +1,11 @@
+import random
+
 
 FILEPATH = "todos.txt"
 
 
-def get_todos(filepath=FILEPATH): #Default parameter
+def get_todos(filepath=FILEPATH):
+    # Default parameter
     """
         Read a text file and return the list
         of todos items.
@@ -12,11 +15,15 @@ def get_todos(filepath=FILEPATH): #Default parameter
     return todos_local
 
 
-
-def write_todos(todos_arg, filepath=FILEPATH ): # los default parameter deben
+def write_todos(todos_arg, filepath=FILEPATH):
+    # los default parameter deben
     # ir despues de los no default parameter.
     """Write the todo items list in a file text."""
     with open(filepath, 'w') as file:
         file.writelines(todos_arg)
 
 
+def numero_random():
+    numero_r = random.random()
+    numero_r = numero_r * 10
+    return numero_r
